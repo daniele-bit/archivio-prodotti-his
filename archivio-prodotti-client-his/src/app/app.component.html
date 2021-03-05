@@ -20,7 +20,7 @@ Cerca <input type="text" placeholder="cerca" [(ngModel)]="criterioRicerca">
     <td>{{p.codice}}</td>
     <td>{{p.descrizione}}</td>
     <td>{{p.prezzo}}</td>
-    <td>{{2+2}}</td>
+    <td>{{p.prezzo * 1.22}}</td>
     <td>
       <button (click)="cancella(p)">X</button>
       <button (click)="calcolaSconto(p)">Sconto 30%</button>
