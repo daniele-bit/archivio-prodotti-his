@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ProdottoDto } from './prodotto-dto';
 import { Prodotto } from './prodotto';
 import { ListaProdottiDto } from './lista-prodotti-dto';
+import { RicercaDto } from './ricerca-dto';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,13 @@ export class AppComponent {
       .subscribe(p => this.prodotti = p.listaProdotti);
     this.prodotto = new Prodotto();
   }
-  ricerca() { }
+  ricerca() {
+    let criterio = new RicercaDto();
+    criterio.ricerca = this.criterioRicerca;
+
+    this.http.post<ListaProdottiDto>("http://localhost:8080/ricerca-prodotto", criterio)
+      .subscribe(p => this.prodotti = p.listaProdotti);
+  }
 
   cancella(p: Prodotto) {
     let dto = new ProdottoDto();
@@ -31,7 +38,7 @@ export class AppComponent {
 
     let oss = this.http.post<ListaProdottiDto>("http://localhost:8080/cancella-prodotto", dto);
     oss.subscribe(p => this.prodotti = p.listaProdotti);
-   }
+  }
 
   calcolaSconto(p: Prodotto) { }
 }

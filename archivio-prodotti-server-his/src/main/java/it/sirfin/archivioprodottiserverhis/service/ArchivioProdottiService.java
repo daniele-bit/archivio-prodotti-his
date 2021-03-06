@@ -15,4 +15,6 @@ public interface ArchivioProdottiService {
     ListaProdottiDto Aggiorna();
 
     ListaProdottiDto cancella(Prodotto p);
+
+    ListaProdottiDto ricerca(String criterio);
 }
