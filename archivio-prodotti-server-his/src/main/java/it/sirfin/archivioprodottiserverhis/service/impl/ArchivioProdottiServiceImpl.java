@@ -27,4 +27,10 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
         return lista;
     }
 
+    @Override
+    public ListaProdottiDto cancella(Prodotto p) {
+        prodottoRepository.delete(p);
+        return Aggiorna();
+    }
+
 }

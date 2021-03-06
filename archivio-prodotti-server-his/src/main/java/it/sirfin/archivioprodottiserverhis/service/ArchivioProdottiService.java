@@ -8,8 +8,11 @@ package it.sirfin.archivioprodottiserverhis.service;
 import dto.ListaProdottiDto;
 import it.sirfin.archivioprodottiserverhis.model.Prodotto;
 
-
 public interface ArchivioProdottiService {
+
     ListaProdottiDto aggiungi(Prodotto p);
+
     ListaProdottiDto Aggiorna();
+
+    ListaProdottiDto cancella(Prodotto p);
 }

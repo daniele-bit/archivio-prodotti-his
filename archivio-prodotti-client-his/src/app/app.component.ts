@@ -25,7 +25,13 @@ export class AppComponent {
   }
   ricerca() { }
 
-  cancella(p: Prodotto) { }
+  cancella(p: Prodotto) {
+    let dto = new ProdottoDto();
+    dto.prodotto = p;
+
+    let oss = this.http.post<ListaProdottiDto>("http://localhost:8080/cancella-prodotto", dto);
+    oss.subscribe(p => this.prodotti = p.listaProdotti);
+   }
 
   calcolaSconto(p: Prodotto) { }
 }
