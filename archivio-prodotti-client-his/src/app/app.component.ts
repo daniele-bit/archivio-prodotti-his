@@ -4,7 +4,6 @@ import { ProdottoDto } from './prodotto-dto';
 import { Prodotto } from './prodotto';
 import { ListaProdottiDto } from './lista-prodotti-dto';
 import { RicercaDto } from './ricerca-dto';
-import { Certificate } from 'crypto';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,7 @@ export class AppComponent {
   prodottoSconto: Prodotto;
 
 constructor(private http: HttpClient) {
-  this.aggiorna(this.criterioRicerca);
+  this.aggiorna();
 }
 
 aggiungi() {
@@ -44,7 +43,7 @@ cancella(p: Prodotto) {
   oss.subscribe(p => this.prodotti = p.listaProdotti);
 }
 
-aggiorna(ricerca: string) {
+aggiorna() {
   // let ricercaDto = new RicercaDto();
   // ricercaDto.ricerca = ricerca;
 

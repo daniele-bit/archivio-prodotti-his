@@ -1852,3 +1852,13 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2021-03-07 21:15:21.446 TRACE 21516 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
 2021-03-07 21:15:21.447 TRACE 21516 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%%]
 2021-03-07 21:15:21.447 TRACE 21516 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-07 21:17:42.579 DEBUG 21516 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-07 21:17:42.580 TRACE 21516 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%%]
+2021-03-07 21:17:42.580 TRACE 21516 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-07 21:17:42.581 TRACE 21516 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%%]
+2021-03-07 21:17:42.581 TRACE 21516 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-07 21:18:05.142 DEBUG 21516 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-07 21:18:05.143 TRACE 21516 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%%]
+2021-03-07 21:18:05.143 TRACE 21516 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-07 21:18:05.144 TRACE 21516 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%%]
+2021-03-07 21:18:05.144 TRACE 21516 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
