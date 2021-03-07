@@ -4,6 +4,7 @@ import { ProdottoDto } from './prodotto-dto';
 import { Prodotto } from './prodotto';
 import { ListaProdottiDto } from './lista-prodotti-dto';
 import { RicercaDto } from './ricerca-dto';
+import { Certificate } from 'crypto';
 
 @Component({
   selector: 'app-root',
@@ -44,17 +45,18 @@ cancella(p: Prodotto) {
 }
 
 aggiorna(ricerca: string) {
-  let ricercaDto = new RicercaDto();
-  ricercaDto.ricerca = ricerca;
+  // let ricercaDto = new RicercaDto();
+  // ricercaDto.ricerca = ricerca;
 
-  if (ricerca == "") {
-    this.http.get<ListaProdottiDto>("http://localhost:8080/aggiorna-lista")
-      .subscribe(c => {
-        this.prodotti = c.listaProdotti;
-      });
-  } else {
-    console.log("Errore criterio");
-  }
+  // if (ricerca == "") {
+  //   this.http.get<ListaProdottiDto>("http://localhost:8080/aggiorna-lista")
+  //     .subscribe(c => {
+  //       this.prodotti = c.listaProdotti;
+  //     });
+  // } else {
+  //   console.log("Errore criterio");
+  // }
+  this.ricerca();
 }
 
 calcolaSconto(p: Prodotto) {

@@ -6,6 +6,7 @@ Prezzo <input type="number" placeholder="prezzo" [(ngModel)]="prodotto.prezzo">
 <br>
 Cerca <input type="text" placeholder="cerca" [(ngModel)]="criterioRicerca">
 <button (click)="ricerca()">Cerca</button>
+<button (click)="aggiorna()">Aggiorna</button>
 <br>
 <br>
 <table *ngIf="prodotti.length > 0">
@@ -19,8 +20,8 @@ Cerca <input type="text" placeholder="cerca" [(ngModel)]="criterioRicerca">
   <tr *ngFor="let p of prodotti">
     <td>{{p.codice}}</td>
     <td>{{p.descrizione}}</td>
-    <td>{{p.prezzo}}</td>
-    <td>{{p.prezzo * 1.22}}</td>
+    <td>{{p.prezzo}}€</td>
+    <td>{{p.prezzo * 1.22 | number: '1.0-2'}}€</td>
     <td>
       <button (click)="cancella(p)">X</button>
       <button (click)="calcolaSconto(p)">Sconto 30%</button>
@@ -40,8 +41,8 @@ Cerca <input type="text" placeholder="cerca" [(ngModel)]="criterioRicerca">
     <td>{{prodottoSconto.codice}}</td>
     <td>{{prodottoSconto.descrizione}}</td>
     <td>{{prodottoSconto.prezzo}}</td>
-    <td>{{prodottoSconto.prezzo*1.22}}</td>
-    <td>{{prodottoSconto.prezzo*1.22*0.7}}</td>
+    <td>{{prodottoSconto.prezzo*1.22 | number: '1.0-2'}}€</td>
+    <td>{{prodottoSconto.prezzo*1.22*0.7 | number: '1.0-2'}}€</td>
   </tr>
 </table>
 
