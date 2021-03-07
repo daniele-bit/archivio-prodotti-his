@@ -18,20 +18,13 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
     @Override
     public ListaProdottiDto aggiungi(Prodotto p) {
         prodottoRepository.save(p);
-        return Aggiorna();
-    }
-
-    @Override
-    public ListaProdottiDto Aggiorna() {
-        ListaProdottiDto lista = new ListaProdottiDto(
-                prodottoRepository.findAll());
-        return lista;
+        return aggiorna();
     }
 
     @Override
     public ListaProdottiDto cancella(Prodotto p) {
         prodottoRepository.delete(p);
-        return Aggiorna();
+        return aggiorna();
     }
 
     @Override
@@ -39,6 +32,13 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
         List<Prodotto> lista = prodottoRepository
                 .findByCodiceContainsOrDescrizioneContains(criterio, criterio);
         return new ListaProdottiDto(lista);
+    }
+
+    @Override
+    public ListaProdottiDto aggiorna() {
+        ListaProdottiDto lista = new ListaProdottiDto(
+                prodottoRepository.findAll());
+        return lista;
     }
 
 }

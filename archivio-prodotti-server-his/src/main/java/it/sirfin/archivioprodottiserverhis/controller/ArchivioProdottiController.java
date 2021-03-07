@@ -36,4 +36,10 @@ public class ArchivioProdottiController {
     public ListaProdottiDto ricerca(@RequestBody RicercaDto reqDto) {
         return archivioProdottiService.ricerca(reqDto.getRicerca());
     }
+    
+      @RequestMapping("/aggiorna-lista")
+    @ResponseBody
+    public ListaProdottiDto aggiornaListaClienti() {
+        return archivioProdottiService.aggiorna();
+    }
 }

@@ -12,7 +12,7 @@ public interface ArchivioProdottiService {
 
     ListaProdottiDto aggiungi(Prodotto p);
 
-    ListaProdottiDto Aggiorna();
+    ListaProdottiDto aggiorna();
 
     ListaProdottiDto cancella(Prodotto p);
 

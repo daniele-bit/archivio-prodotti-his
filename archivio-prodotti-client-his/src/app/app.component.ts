@@ -15,7 +15,9 @@ export class AppComponent {
   criterioRicerca = "";
   prodotti: Prodotto[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.aggiorna(this.criterioRicerca);
+  }
 
   aggiungi() {
     let dto = new ProdottoDto();
@@ -38,6 +40,20 @@ export class AppComponent {
 
     let oss = this.http.post<ListaProdottiDto>("http://localhost:8080/cancella-prodotto", dto);
     oss.subscribe(p => this.prodotti = p.listaProdotti);
+  }
+
+  aggiorna(ricerca: string) {
+    let ricercaDto = new RicercaDto();
+    ricercaDto.ricerca = ricerca;
+
+    if (ricerca == "") {
+      this.http.get<ListaProdottiDto>("http://localhost:8080/aggiorna-lista")
+        .subscribe(c => {
+          this.prodotti = c.listaProdotti;
+        });
+    } else {
+      console.log("Errore criterio");
+    }
   }
 
   calcolaSconto(p: Prodotto) { }
