@@ -28,3 +28,21 @@ Cerca <input type="text" placeholder="cerca" [(ngModel)]="criterioRicerca">
   </tr>
 </table>
 <br>
+<table *ngIf="prodottoSconto">
+  <tr>
+    <th>Codice</th>
+    <th>Descrizione</th>
+    <th>Prezzo</th>
+    <th>Prezzo con IVA</th>
+    <th>Prezzo scontato 30%</th>
+  </tr>
+  <tr>
+    <td>{{prodottoSconto.codice}}</td>
+    <td>{{prodottoSconto.descrizione}}</td>
+    <td>{{prodottoSconto.prezzo}}</td>
+    <td>{{prodottoSconto.prezzo*1.22}}</td>
+    <td>{{prodottoSconto.prezzo*1.22*0.7}}</td>
+  </tr>
+</table>
+
+
